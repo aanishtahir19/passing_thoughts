@@ -16,6 +16,7 @@ export default function AddThought(props) {
         }
         if(thought.text.length > 0 && thought.text.replace(/^\s+|\s+$/gm,'').length !== 0){
             props.addNewThought(thought);
+            // console.log(thought)
             setText("")
         }
         

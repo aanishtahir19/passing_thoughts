@@ -9,6 +9,9 @@ export default function App() {
     setThoughts((prev)=>[thought, ...prev])
     // console.log(thought)
   }
+  const removeThought = (id)=>{
+    setThoughts(thoughts.filter(thought=> thought.id !== id))
+  }
   return (
     <div className="App">
       <header>
@@ -20,7 +23,7 @@ export default function App() {
       <AddThought addNewThought={addThought}/>
       {
         thoughts.map(thought => (
-          <Thought thought={thought} key={thought.id} />
+          <Thought thought={thought} key={thought.id} removeThought={removeThought} />
         )
 
         )
